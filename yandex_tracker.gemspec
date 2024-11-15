@@ -23,6 +23,12 @@ Gem::Specification.new do |spec|
       (File.expand_path(f) == __FILE__) || f.start_with?(*%w[bin/ test/ spec/ features/ .git .circleci appveyor])
     end
   end
+  # spec.files = Dir[
+  #   "lib/**/*",
+  #   "LICENSE.txt",
+  #   "README.md",
+  #   "CHANGELOG.md"
+  # ]
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
