@@ -9,16 +9,13 @@ module YandexTracker
                   :cloud_org_id, :org_id,
                   :access_token, :refresh_token
 
-    REQUIRED_ATTRIBUTES = %i[client_id client_secret].freeze
-    REQUIRED_ONE_OF = [%i[cloud_org_id org_id]].freeze
-
     def initialize
       @timeout = 30
     end
 
     def validate!
-      validate_required_attributes!
-      validate_required_one_of!
+      validate_org_configuration!
+      validate_auth_configuration!
     end
 
     def update_tokens(access_token:, refresh_token:, expires_in:)
@@ -28,8 +25,7 @@ module YandexTracker
     end
 
     def token_expired?
-      return true if @access_token.nil?
-      return true if @token_expires_at.nil?
+      return false unless @token_expires_at
 
       Time.now >= @token_expires_at
     end
@@ -45,26 +41,24 @@ module YandexTracker
       headers
     end
 
-    private
-
-    def validate_required_attributes!
-      missing_attributes = REQUIRED_ATTRIBUTES.select { |attribute| send(attribute).nil? }
-
-      return if missing_attributes.empty?
-
-      raise YandexTracker::Errors::ConfigurationError,
-            "Required configuration missing: #{missing_attributes.join(", ")}"
+    def can_perform_oauth?
+      client_id && client_secret
     end
 
-    def validate_required_one_of!
-      REQUIRED_ONE_OF.each do |attributes|
-        next unless attributes.none? do |attribute|
-          send(attribute)
-        end
+    private
 
-        raise YandexTracker::Errors::ConfigurationError,
-              "Required configuration: one of #{attributes.join(", ")}"
-      end
+    def validate_org_configuration!
+      return if cloud_org_id || org_id
+
+      raise YandexTracker::Errors::ConfigurationError,
+            "Required configuration missing: one of cloud_org_id, org_id"
+    end
+
+    def validate_auth_configuration!
+      return if access_token || (client_id && client_secret)
+
+      raise YandexTracker::Errors::ConfigurationError,
+            "Either access_token or (client_id + client_secret) are required"
     end
   end
 end

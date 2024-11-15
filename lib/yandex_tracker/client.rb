@@ -36,8 +36,17 @@ module YandexTracker
     end
 
     def ensure_fresh_token
-      YandexTracker::Auth.refresh_token if YandexTracker.configuration.token_expired?
-      YandexTracker.configuration.access_token
+      configuration = YandexTracker.configuration
+
+      if configuration.can_refresh? && configuration.token_expired?
+        if configuration.can_perform_oauth?
+          YandexTracker::Auth.refresh_token
+        else
+          raise YandexTracker::Errors::AuthError,
+                "Token expired and unable to refresh (missing refresh_token or OAuth credentials)"
+        end
+      end
+      configuration.access_token
     end
   end
 end

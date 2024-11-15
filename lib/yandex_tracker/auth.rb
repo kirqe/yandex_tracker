@@ -16,7 +16,6 @@ module YandexTracker
           grant_type: "authorization_code",
           code: code
         )
-
         update_configuration(response)
       end
 
@@ -25,7 +24,6 @@ module YandexTracker
           grant_type: "refresh_token",
           refresh_token: YandexTracker.configuration.refresh_token
         )
-
         update_configuration(response)
       end
 
@@ -62,7 +60,6 @@ module YandexTracker
           refresh_token: response["refresh_token"],
           expires_in: response["expires_in"]
         )
-
         response
       end
     end
