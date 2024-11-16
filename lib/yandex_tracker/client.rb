@@ -22,6 +22,10 @@ module YandexTracker
       @multipart_conn = make_client(:multipart)
     end
 
+    def users
+      @users ||= Resources::User.new(self)
+    end
+
     private
 
     def make_client(request)
@@ -30,7 +34,6 @@ module YandexTracker
         f.response :json
         f.adapter Faraday.default_adapter
         f.headers.merge!(YandexTracker.configuration.additional_headers)
-        f.options.timeout = YandexTracker.configuration.timeout
         f.request :authorization, "Bearer", -> { ensure_fresh_token }
       end
     end

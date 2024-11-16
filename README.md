@@ -18,8 +18,6 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-#### Configure
-
 ```ruby
   # with client_id, client_secret and code from callback
   YandexTracker.configure do |config|
@@ -35,6 +33,12 @@ If bundler is not being used to manage dependencies, install the gem by executin
     config.access_token = "xyz"
     config.org_id = "123" # or cloud_org_id
   end
+
+  client = YandexTracker::Client.new
+
+  client.users.myself
+  client.users.list
+  client.users.find("xyz")
 ```
 
 ## Development
