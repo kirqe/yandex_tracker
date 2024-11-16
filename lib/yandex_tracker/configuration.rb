@@ -5,13 +5,9 @@ module YandexTracker
   # Handles API client configuration and validation
   #
   class Configuration
-    attr_accessor :client_id, :client_secret, :timeout,
+    attr_accessor :client_id, :client_secret,
                   :cloud_org_id, :org_id,
                   :access_token, :refresh_token
-
-    def initialize
-      @timeout = 30
-    end
 
     def validate!
       validate_org_configuration!

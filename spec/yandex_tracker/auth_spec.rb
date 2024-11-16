@@ -27,6 +27,17 @@ RSpec.describe YandexTracker::Auth do
 
       response = described_class.exchange_code("test_code")
       expect(response).to eq(mock_response)
+      expect(YandexTracker.configuration.access_token).to eq("new_access_token")
+      expect(YandexTracker.configuration.refresh_token).to eq("new_refresh_token")
+    end
+
+    it "raises AuthError on failed request" do
+      stub_request(:post, YandexTracker::Auth::AUTH_URL)
+        .to_return(status: 401, body: { "error" => "invalid_token" }.to_json)
+
+      expect do
+        described_class.exchange_code("invalid_code")
+      end.to raise_error(YandexTracker::Errors::AuthError)
     end
   end
 
@@ -48,41 +59,18 @@ RSpec.describe YandexTracker::Auth do
     end
   end
 
-  describe ".basic_auth" do
-    it "generates correct Basic Auth header" do
-      expected = Base64.strict_encode64("#{client_id}:#{client_secret}")
-      expect(described_class.basic_auth).to eq(expected)
-    end
-  end
-
-  describe ".handle_response" do
-    let(:success_response) { double(status: 200, body: mock_response) }
-    let(:error_response) { double(status: 401, body: { "error" => "invalid_token" }) }
-
-    it "returns response body for successful requests" do
-      expect(described_class.handle_response(success_response)).to eq(mock_response)
-    end
-
-    it "raises AuthError for failed requests" do
-      expect do
-        described_class.handle_response(error_response)
-      end.to raise_error(YandexTracker::Errors::AuthError)
-    end
-  end
-
   private
 
   def stub_auth_request(params)
-    stub_request(:post, "#{YandexTracker::Auth::AUTH_URL}/token")
-      .with(body: params, headers: auth_headers)
+    stub_request(:post, YandexTracker::Auth::AUTH_URL)
+      .with(
+        body: params,
+        headers: {
+          "Authorization" => "Basic #{basic_auth}",
+          "Content-Type" => "application/x-www-form-urlencoded"
+        }
+      )
       .to_return(success_response)
-  end
-
-  def auth_headers
-    {
-      "Authorization" => "Basic #{described_class.basic_auth}",
-      "Content-Type" => "application/x-www-form-urlencoded"
-    }
   end
 
   def success_response
@@ -91,5 +79,10 @@ RSpec.describe YandexTracker::Auth do
       body: mock_response.to_json,
       headers: { "Content-Type" => "application/json" }
     }
+  end
+
+  def basic_auth
+    credentials = "#{YandexTracker.configuration.client_id}:#{YandexTracker.configuration.client_secret}"
+    Base64.strict_encode64(credentials)
   end
 end
