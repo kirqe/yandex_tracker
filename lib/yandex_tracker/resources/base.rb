@@ -1,11 +1,16 @@
 # frozen_string_literal: true
 
+require "uri"
+require_relative "../resource_handler"
+
 module YandexTracker
   module Resources
     #
     # Base Resource
     #
     class Base
+      include ResourceHandler
+
       attr_reader :client
 
       def initialize(client)
@@ -29,7 +34,7 @@ module YandexTracker
       end
 
       def handle_response(response)
-        return response.body if response.success?
+        return process_response(response.body) if response.success?
 
         handle_error_response(response)
       rescue Faraday::TimeoutError
