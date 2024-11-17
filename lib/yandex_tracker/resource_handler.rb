@@ -21,15 +21,8 @@ module YandexTracker
     private
 
     def convert_hash_values(hash)
-      if reference?(hash)
-        ResourceReference.new(hash)
-      else
-        OpenStruct.new(hash.transform_values { |v| process_response(v) })
-      end
-    end
-
-    def reference?(hash)
-      hash.is_a?(Hash) && (hash.key?("id") || hash.key?("key"))
+      processed = hash.transform_values { |v| process_response(v) }
+      OpenStruct.new(processed)
     end
   end
 end
