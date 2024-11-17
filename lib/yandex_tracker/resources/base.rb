@@ -18,19 +18,19 @@ module YandexTracker
       end
 
       def get(path, params = {})
-        handle_response client.conn.get(encode_path(path), params)
+        handle_response client.conn.get(path, params)
       end
 
       def post(path, body = {})
-        handle_response client.conn.post(encode_path(path), body)
+        handle_response client.conn.post(path, body)
       end
 
       def put(path, body = {})
-        handle_response client.conn.put(encode_path(path), body)
+        handle_response client.conn.put(path, body)
       end
 
       def delete(path, params = {})
-        handle_response client.conn.delete(encode_path(path), params)
+        handle_response client.conn.delete(path, params)
       end
 
       def handle_response(response)

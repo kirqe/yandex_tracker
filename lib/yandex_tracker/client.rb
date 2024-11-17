@@ -26,6 +26,22 @@ module YandexTracker
       @users ||= Resources::User.new(self)
     end
 
+    def queues
+      @queues ||= Resources::Queue.new(self)
+    end
+
+    def issues
+      @issues ||= Resources::Issue.new(self)
+    end
+
+    def comments
+      @comments ||= Resources::Comment.new(self)
+    end
+
+    def attachments
+      @attachments ||= Resources::Attachment.new(self)
+    end
+
     private
 
     def make_client(request)

@@ -10,12 +10,12 @@ module YandexTracker
         get("myself")
       end
 
-      def list(params = {})
+      def list(**params)
         get("users", params)
       end
 
       def find(id)
-        get("users/#{id}")
+        get("users/#{encode_path(id)}")
       end
     end
   end

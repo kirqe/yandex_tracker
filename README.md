@@ -18,6 +18,8 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
+#### Configure, client
+
 ```ruby
   # with client_id, client_secret and code from callback
   YandexTracker.configure do |config|
@@ -35,11 +37,61 @@ If bundler is not being used to manage dependencies, install the gem by executin
   end
 
   client = YandexTracker::Client.new
+```
 
-  client.users.myself
+#### Users
+
+```ruby
   client.users.list
   client.users.find("xyz")
+  client.users.myself
 ```
+
+#### Queues
+
+```ruby
+  client.queues.list
+  client.queues.find("MYQUEUE")
+  client.queues.create(
+    key: "MYQUEUE",
+    name: "MYQUEUE",
+    lead: "me",
+    defaultType: "task",
+    defaultPriority: "normal",
+    issueTypesConfig: {
+      issueType: "task",
+      workflow: "developmentPresetWorkflow",
+      resolutions: ["wontFix"]
+    }
+  )
+```
+
+#### Issues
+
+```ruby
+  client.issues.list
+  client.find.find("TEST-1")
+  client.issues.create(
+    queue: "MYQUEUE",
+    summary: "abc"
+  )
+```
+
+#### Comments
+
+```ruby
+  client.comments.list
+  client.comments.create("TEST-1", text: "zxc")
+```
+
+#### Attachments
+
+```ruby
+  client.attachments.list
+  client.attachments.create("TEST-1", "issue-1.png", filename: "issue-1")
+  client.attachments.create_temp("issue-1.png", filename: "issue-1")
+```
+
 
 ## Development
 
