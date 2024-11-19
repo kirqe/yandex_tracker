@@ -38,7 +38,7 @@ RSpec.describe YandexTracker::Configuration do
       config.org_id = "test_org_id"
       expect { config.validate! }.to raise_error(
         YandexTracker::Errors::ConfigurationError,
-        "Either access_token or (client_id + client_secret) are required"
+        "Either access_token or (client_id + client_secret) must be set"
       )
     end
 
@@ -46,7 +46,7 @@ RSpec.describe YandexTracker::Configuration do
       config.access_token = "test_token"
       expect { config.validate! }.to raise_error(
         YandexTracker::Errors::ConfigurationError,
-        "Required configuration missing: one of cloud_org_id, org_id"
+        "Required configuration missing: either cloud_org_id or org_id must be set"
       )
     end
   end

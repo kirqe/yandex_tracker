@@ -12,6 +12,10 @@ module YandexTracker
     class TimeoutError < ApiError; end
     class ConnectionError < ApiError; end
     class ConfigurationError < StandardError; end
+    class Error < StandardError; end
+    class ArgumentError < Error; end
+    class ResourceError < Error; end
+    class ContextError < Error; end
 
     module_function
 

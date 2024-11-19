@@ -1,27 +1,20 @@
 # YandexTracker
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/yandex_tracker`. To experiment with that code, run `bin/console` for an interactive prompt.
+Ruby API client for [YandexTracker](https://yandex.cloud/en-ru/docs/tracker/about-api) with partially implemented resources for essential needs
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ bundle add yandex-tracker
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ gem install yandex-tracker
 
-## Usage
-
-#### Configure, client
+## Configure
 
 ```ruby
-  # with client_id, client_secret and code from callback
   YandexTracker.configure do |config|
     config.client_id = "abc"
     config.client_secret = "def"
@@ -30,29 +23,22 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
   YandexTracker::Auth.exchange_code(code)
 
-  # if already have access_token and don't plan to refresh it
+  # or
+
   YandexTracker.configure do |config|
     config.access_token = "xyz"
     config.org_id = "123" # or cloud_org_id
   end
+```
 
+## Usage
+
+```ruby
   client = YandexTracker::Client.new
-```
 
-#### Users
-
-```ruby
-  client.users.list
-  client.users.find("xyz")
   client.users.myself
-```
 
-#### Queues
-
-```ruby
-  client.queues.list
-  client.queues.find("MYQUEUE")
-  client.queues.create(
+  myqueue = client.queues.create(
     key: "MYQUEUE",
     name: "MYQUEUE",
     lead: "me",
@@ -63,45 +49,38 @@ If bundler is not being used to manage dependencies, install the gem by executin
       workflow: "developmentPresetWorkflow",
       resolutions: ["wontFix"]
     }
-  )
-```
+  ) #<YandexTracker::Objects::Queue>
 
-#### Issues
+  myqueue.issues #<YandexTracker::Collections::Issues>
 
-```ruby
+  issue = myqueue.issues.create(summary: "zxc")
+  comment = issue.comments.create(text: "ok")
+
+  issue.attachments.create(File.open("Screenshot.png"))
+
+  unattached_file = client.attachments.create(File.open("Screenshot.png"))
+  comment.create(text: "More details", attachmentIds: [temp_attachment.id])
+
+  issue.transitions
+  issue.transition('wont_fix', comment: 'wae')
+  issue.transition('reopen', comment: 'no')
+  issue.transition('close', resolution: 'wontFix')
+
   client.issues.list
-  client.find.find("TEST-1")
-  client.issues.create(
-    queue: "MYQUEUE",
-    summary: "abc"
-  )
+  client.issues(queue: "MYQUEUE").list
+  attachments = client.attachments(issue: "MYQUEUE-1").list
+  attachments.first.download
+
+  client.comments(issue: "MYQUEUE-1").create(text: "hello")
+
+  issue = client.issues.search({
+    filter: { queue: "TEST", status: "open"}},
+    expand: "attachments"
+  ).first
+
+  issue.attachments
+  issue.data
 ```
-
-#### Comments
-
-```ruby
-  client.comments.list
-  client.comments.create("TEST-1", text: "zxc")
-```
-
-#### Attachments
-
-```ruby
-  client.attachments.list
-  client.attachments.create("TEST-1", "issue-1.png", filename: "issue-1")
-  client.attachments.create_temp("issue-1.png", filename: "issue-1")
-```
-
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/yandex_tracker.
 
 ## License
 

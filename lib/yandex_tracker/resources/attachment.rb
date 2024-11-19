@@ -1,49 +1,55 @@
 # frozen_string_literal: true
 
+require_relative "base"
+
 module YandexTracker
   module Resources
     #
-    # Attachment resource
+    # Resources::Attachment
     #
     class Attachment < Base
-      def create(issue_id, file_path, filename: nil)
-        file = prepare_file(file_path, filename: filename)
-        post_multipart("issues/#{encode_path(issue_id)}/attachments", file: file)
+      # Create unattached file
+      def create(file, **attributes)
+        upload("attachments", file, attributes)
       end
 
-      def create_temp(file_path, filename: nil)
-        file = prepare_file(file_path, filename: filename)
-        post_multipart("attachments", file: file)
+      # Upload file directly to issue
+      def create_for_issue(issue_id, file, **attributes)
+        upload("issues/#{issue_id}/attachments", file, attributes)
       end
 
-      def list(issue_id)
-        get("issues/#{encode_path(issue_id)}/attachments")
+      # Upload file directly to comment
+      def create_for_comment(issue_id, comment_id, file, **attributes)
+        upload("issues/#{issue_id}/comments/#{comment_id}/attachments", file, attributes)
+      end
+
+      def find(id)
+        get("attachments/#{id}")
+      end
+
+      def list(issue_id, **params)
+        get("issues/#{issue_id}/attachments", params)
       end
 
       private
 
-      def post_multipart(path, payload)
-        handle_response client.multipart_conn.post(path, payload)
+      def upload(path, file, attributes)
+        form = {
+          file: Faraday::Multipart::FilePart.new(
+            file.path,
+            mime_type(file),
+            File.basename(file)
+          )
+        }.merge(attributes)
+
+        handle_response client.multipart_conn.post(path, form)
       end
 
-      def prepare_file(file_path, filename: nil)
-        Faraday::Multipart::FilePart.new(
-          file_path,
-          mime_type(file_path),
-          filename || File.basename(file_path)
-        )
-      end
+      def mime_type(file)
+        return file.content_type if file.respond_to?(:content_type)
 
-      def mime_type(file_path)
-        case File.extname(file_path).downcase
-        when ".jpg", ".jpeg" then "image/jpeg"
-        when ".png" then "image/png"
-        when ".gif" then "image/gif"
-        when ".pdf" then "application/pdf"
-        when ".doc", ".docx" then "application/msword"
-        when ".xls", ".xlsx" then "application/vnd.ms-excel"
-        else "application/octet-stream"
-        end
+        require "mime/types"
+        MIME::Types.type_for(file.path).first&.content_type || "application/octet-stream"
       end
     end
   end

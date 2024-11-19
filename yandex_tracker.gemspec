@@ -35,4 +35,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "faraday", "~> 2.0"
   spec.add_dependency "faraday-multipart", "~> 1.0"
+  spec.add_dependency "faraday-retry", "~> 2.2"
+  spec.add_dependency "mime-types", "~> 3.1"
 end

@@ -3,15 +3,19 @@
 module YandexTracker
   module Resources
     #
-    # Comment resource
+    # Resources::Comment
     #
     class Comment < Base
       def create(issue_id, **attributes)
-        post("issues/#{encode_path(issue_id)}/comments", attributes)
+        post("issues/#{issue_id}/comments", attributes)
+      end
+
+      def update(issue_id, comment_id, **attributes)
+        patch("issues/#{issue_id}/comments/#{comment_id}", attributes)
       end
 
       def list(issue_id, **params)
-        get("issues/#{encode_path(issue_id)}/comments", params)
+        get("issues/#{issue_id}/comments", params)
       end
     end
   end

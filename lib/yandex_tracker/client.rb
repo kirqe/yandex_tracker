@@ -2,6 +2,7 @@
 
 require "faraday"
 require "faraday/multipart"
+require "faraday/retry"
 
 module YandexTracker
   #
@@ -23,23 +24,23 @@ module YandexTracker
     end
 
     def users
-      @users ||= Resources::User.new(self)
+      Collections::Users.new(self)
     end
 
     def queues
-      @queues ||= Resources::Queue.new(self)
+      Collections::Queues.new(self)
     end
 
-    def issues
-      @issues ||= Resources::Issue.new(self)
+    def issues(queue: nil)
+      Collections::Issues.new(self, queue)
     end
 
-    def comments
-      @comments ||= Resources::Comment.new(self)
+    def comments(issue: nil)
+      Collections::Comments.new(self, issue)
     end
 
-    def attachments
-      @attachments ||= Resources::Attachment.new(self)
+    def attachments(issue: nil)
+      Collections::Attachments.new(self, issue)
     end
 
     private
@@ -48,6 +49,7 @@ module YandexTracker
       Faraday.new(url: BASE_URL) do |f|
         f.request request
         f.response :json
+        f.request :retry, { max: 3, retry_statuses: [401, 409, 500, 502, 503, 504] }
         f.adapter Faraday.default_adapter
         f.headers.merge!(YandexTracker.configuration.additional_headers)
         f.request :authorization, "Bearer", -> { ensure_fresh_token }

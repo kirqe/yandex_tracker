@@ -23,7 +23,7 @@ module YandexTracker
     def token_expired?
       return false unless @token_expires_at
 
-      Time.now >= @token_expires_at
+      Time.now >= (@token_expires_at - 300)
     end
 
     def can_refresh?
@@ -38,7 +38,7 @@ module YandexTracker
     end
 
     def can_perform_oauth?
-      client_id && client_secret
+      valid_oauth_auth?
     end
 
     private
@@ -46,15 +46,21 @@ module YandexTracker
     def validate_org_configuration!
       return if cloud_org_id || org_id
 
-      raise YandexTracker::Errors::ConfigurationError,
-            "Required configuration missing: one of cloud_org_id, org_id"
+      raise Errors::ConfigurationError, "Required configuration missing: either cloud_org_id or org_id must be set"
     end
 
     def validate_auth_configuration!
-      return if access_token || (client_id && client_secret)
+      return if valid_token_auth? || valid_oauth_auth?
 
-      raise YandexTracker::Errors::ConfigurationError,
-            "Either access_token or (client_id + client_secret) are required"
+      raise Errors::ConfigurationError, "Either access_token or (client_id + client_secret) must be set"
+    end
+
+    def valid_token_auth?
+      access_token
+    end
+
+    def valid_oauth_auth?
+      client_id && client_secret
     end
   end
 end

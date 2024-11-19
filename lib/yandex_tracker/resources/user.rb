@@ -3,7 +3,7 @@
 module YandexTracker
   module Resources
     #
-    # User resource
+    # Resources::User
     #
     class User < Base
       def myself
@@ -15,7 +15,7 @@ module YandexTracker
       end
 
       def find(id)
-        get("users/#{encode_path(id)}")
+        get("users/#{id}")
       end
     end
   end

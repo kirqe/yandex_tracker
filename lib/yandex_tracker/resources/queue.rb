@@ -3,7 +3,7 @@
 module YandexTracker
   module Resources
     #
-    # Queue resource
+    # Resources::Queue
     #
     class Queue < Base
       def create(**attributes)
@@ -11,7 +11,7 @@ module YandexTracker
       end
 
       def find(id, **params)
-        get("queues/#{encode_path(id)}", params)
+        get("queues/#{id}", params)
       end
 
       def list(**params)

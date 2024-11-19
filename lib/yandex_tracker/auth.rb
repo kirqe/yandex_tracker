@@ -12,22 +12,37 @@ module YandexTracker
 
     class << self
       def exchange_code(code)
+        raise ArgumentError, "code is required" if code.nil? || code.empty?
+
         response = make_request(grant_type: "authorization_code", code: code)
         update_configuration(response)
         response
       end
 
       def refresh_token
-        response = make_request(grant_type: "refresh_token", refresh_token: YandexTracker.configuration.refresh_token)
+        validate_oauth_config!
+        refresh_token = YandexTracker.configuration.refresh_token
+        raise ArgumentError, "refresh_token is required" if refresh_token.nil? || refresh_token.empty?
+
+        response = make_request(grant_type: "refresh_token", refresh_token: refresh_token)
         update_configuration(response)
         response
       end
 
       private
 
+      def validate_oauth_config!
+        config = YandexTracker.configuration
+
+        raise Errors::AuthError, "client_id is required" if config.client_id.nil? || config.client_id.empty?
+        raise Errors::AuthError, "client_secret is required" if config.client_secret.nil? || config.client_secret.empty?
+      end
+
       def make_request(params)
         response = connection.post("", params)
         handle_response(response)
+      rescue Faraday::Error => e
+        raise Errors::AuthError, "Authentication failed: #{e.message}"
       end
 
       def connection
