@@ -24,8 +24,7 @@ module YandexTracker
       end
 
       def transition(transition_id, **attributes)
-        response = resource.transition(id, transition_id, **attributes)
-        refresh_from(response)
+        resource.transition(id, transition_id, **attributes)
       end
 
       private

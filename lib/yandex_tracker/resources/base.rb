@@ -65,7 +65,8 @@ module YandexTracker
       end
 
       def prepare_path(path, query_params = {})
-        path = encode_path(path)
+        segments = path.split("/").map { |segment| encode_path(segment) }
+        path = segments.join("/")
         path = "#{path}?#{URI.encode_www_form(query_params)}" unless query_params.empty?
         path
       end
