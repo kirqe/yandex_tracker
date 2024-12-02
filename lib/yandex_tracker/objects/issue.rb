@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "base"
-require_relative "../collections/comments"
-require_relative "../collections/attachments"
-
 module YandexTracker
   module Objects
     #

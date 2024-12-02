@@ -2,7 +2,7 @@
 
 module YandexTracker
   #
-  # <Description>
+  # ResourceHandler
   #
   module ResourceHandler
     def process_response(data)
