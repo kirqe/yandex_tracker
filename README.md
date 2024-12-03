@@ -78,8 +78,19 @@ If bundler is not being used to manage dependencies, install the gem by executin
     expand: "attachments"
   ).first
 
+  issue.createdBy
+  issue.createdBy.expand
+
   issue.attachments
   issue.data
+
+  client.issues.import({
+    queue: "TEST",
+    summary: "Test",
+    createdAt: "2017-08-29T12:34:41.740+0000",
+    createdBy: "username",
+    ...
+  })
 ```
 
 ## License

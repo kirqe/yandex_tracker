@@ -33,6 +33,10 @@ module YandexTracker
       def search(body = {}, **query_params)
         post("issues/_search", body, query_params)
       end
+
+      def import(body = {}, **query_params)
+        post("issues/_import", body, query_params)
+      end
     end
   end
 end

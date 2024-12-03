@@ -40,6 +40,11 @@ module YandexTracker
         build_objects(Objects::Issue, response, { queue_id: queue_id })
       end
 
+      def import(body = {}, **query_params)
+        response = resource.import(body, **query_params)
+        build_objects(Objects::Issue, response, { queue_id: queue_id })
+      end
+
       private
 
       attr_reader :resource
