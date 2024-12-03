@@ -7,7 +7,6 @@ require_relative "yandex_tracker/collections/base"
 
 require_relative "yandex_tracker/configuration"
 require_relative "yandex_tracker/auth"
-require_relative "yandex_tracker/resource_handler"
 require_relative "yandex_tracker/client"
 require_relative "yandex_tracker/resources/base"
 require_relative "yandex_tracker/resources/user"
