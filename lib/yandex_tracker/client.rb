@@ -43,6 +43,22 @@ module YandexTracker
       Collections::Attachments.new(self, issue)
     end
 
+    def workflows
+      Collections::Workflows.new(self)
+    end
+
+    def resolutions
+      Collections::Resolutions.new(self)
+    end
+
+    def fields
+      Collections::Fields.new(self)
+    end
+
+    def categories
+      Collections::Categories.new(self)
+    end
+
     private
 
     def make_client(request)

@@ -66,7 +66,12 @@ module YandexTracker
         when "comments"  then Objects::Comment.new(client, hash, context)
         when "issues"    then Objects::Issue.new(client, hash)
         when "queues"    then Objects::Queue.new(client, hash)
+        when "fields"    then Objects::Field.new(client, hash)
+        when "workflows" then Objects::Workflow.new(client, hash)
+        when "categories" then Objects::Category.new(client, hash)
+        when "resolutions" then Objects::Resolution.new(client, hash)
         when "attachments" then Objects::Attachment.new(client, hash)
+        when "localFields" then Objects::LocalField.new(client, hash)
         else hash
         end
       end

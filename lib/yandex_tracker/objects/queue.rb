@@ -15,6 +15,10 @@ module YandexTracker
         refresh_from(response)
       end
 
+      def local_fields
+        @local_fields ||= Collections::LocalFields.new(client, id)
+      end
+
       private
 
       def resource

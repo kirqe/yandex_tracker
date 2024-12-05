@@ -22,6 +22,8 @@ module YandexTracker
     def format_message(body)
       return body.to_s unless body.is_a?(Hash)
 
+      # TODO: {"errors"=>{"type"=>"Требуется параметр.", "category"=>"Требуется параметр."}, \
+      # "errorsData"=>{}, "errorMessages"=>[], "statusCode"=>422}
       body["errorMessages"]&.join(", ") || body["message"] || body.to_s
     end
   end

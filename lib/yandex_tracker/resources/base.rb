@@ -47,6 +47,7 @@ module YandexTracker
       end
 
       def handle_error_response(response)
+        puts response.body
         case response.status
         when 401, 403 then raise Errors::Unauthorized, Errors.format_message(response.body)
         when 404 then raise Errors::NotFound, Errors.format_message(response.body)
