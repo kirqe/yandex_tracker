@@ -55,6 +55,7 @@ module YandexTracker
         end
       end
 
+      # rubocop:disable Metrics/CyclomaticComplexity
       def wrap_hash(hash)
         return hash unless hash["self"]
 
@@ -75,6 +76,7 @@ module YandexTracker
         else hash
         end
       end
+      # rubocop:enable Metrics/CyclomaticComplexity
 
       def build_objects(klass, data)
         data.map { |item| klass.new(client, item, context) }
