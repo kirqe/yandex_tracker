@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../resources/comment"
-require_relative "../objects/comment"
-
 module YandexTracker
   module Collections
     #

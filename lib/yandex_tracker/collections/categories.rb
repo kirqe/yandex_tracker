@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../resources/category"
-require_relative "../objects/category"
-require_relative "base"
-
 module YandexTracker
   module Collections
     #

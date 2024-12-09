@@ -38,8 +38,8 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
   client.users.myself
 
-  client.resolutions.list
   client.workflows.list
+  client.resolutions.list
 
   myqueue = client.queues.create(
     key: "MYQUEUE",
@@ -95,13 +95,17 @@ If bundler is not being used to manage dependencies, install the gem by executin
     ...
   })
 
-  client.fields.create({name: { en: "My Field", ru: "Моe поле" }, id: "myglobalfield"})
-
-
   client.categories.list
   client.categories.create(
     name: { en: "My Category", ru: "Моя Категория" },
     order: 1
+  )
+
+  client.fields.create(
+    name: { en: "My Field", ru: "Моe поле" },
+    id: "myglobalfield",
+    type: "ru.yandex.startrek.core.fields.StringFieldType",
+    category: "0000000000000003********"
   )
 
   myqueue.local_fields.list

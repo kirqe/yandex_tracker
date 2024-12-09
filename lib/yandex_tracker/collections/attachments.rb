@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../resources/attachment"
-require_relative "../objects/attachment"
-
 module YandexTracker
   module Collections
     #

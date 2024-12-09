@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../resources/queue"
-require_relative "../objects/queue"
-require_relative "base"
-
 module YandexTracker
   module Collections
     #

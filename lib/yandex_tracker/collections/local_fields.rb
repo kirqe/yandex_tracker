@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../resources/field"
-require_relative "../objects/field"
-require_relative "base"
-
 module YandexTracker
   module Collections
     #

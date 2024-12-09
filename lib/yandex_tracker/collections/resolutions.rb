@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../resources/resolution"
-require_relative "../objects/resolution"
-require_relative "base"
-
 module YandexTracker
   module Collections
     #
