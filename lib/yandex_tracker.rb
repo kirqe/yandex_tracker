@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Dir[File.join(__dir__, "yandex_tracker/**/*.rb")].sort.each { |f| require f }
+
 require_relative "yandex_tracker/version"
 require_relative "yandex_tracker/errors"
 require_relative "yandex_tracker/objects/base"

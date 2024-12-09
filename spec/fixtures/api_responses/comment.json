@@ -1,0 +1,23 @@
+{
+  "self": "https://https://api.tracker.yandex.net/v2/issues/JUNE-2/comments/98******",
+  "id": 98,
+  "longId" : "5fa15a24ac894475********",
+  "text": "Comment **number one.**",
+  "textHtml": "<p>Comment <strong>number one.</strong></p>\n",
+  "attachments": [{ "self": "https://https://api.tracker.yandex.net/v2/issues/JUNE-3/attachments/1", "id": "1", "display": "Untitled.png" }],
+  "createdBy": {
+      "self": "https://https://api.tracker.yandex.net/v2/users/11********",
+      "id": "11********",
+      "display": "Ivan Ivanov"
+  },
+  "updatedBy": {
+      "self": "https://https://api.tracker.yandex.net/v2/users/11********",
+      "id": "11********",
+      "display": "Ivan Ivanov"
+  },
+  "createdAt": "2017-06-11T05:11:12.347+0000",
+  "updatedAt": "2017-06-11T05:11:12.347+0000",
+  "version": 1,
+  "type" : "standard",
+  "transport" : "internal"
+}

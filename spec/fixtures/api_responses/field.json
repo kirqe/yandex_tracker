@@ -1,0 +1,35 @@
+{
+  "self": "https://https://api.tracker.yandex.net/v2/fields/global_field_key",
+  "id": "global_field_key",
+  "name": "Field name in Russian",
+  "description": "Field description",
+  "key": "global_field_key",
+  "version": 1,
+  "schema": {
+      "type": "array",
+      "items": "string",
+      "required": false
+  },
+  "readonly": false,
+  "options": true,
+  "suggest": false,
+  "optionsProvider": {
+      "type": "FixedListOptionsProvider",
+      "needValidation": true,
+      "values": [
+          "List item 1",
+          "List item 2",
+          "List item 3"
+      ]
+  },
+  "queryProvider": {
+      "type": "StringOptionalQueryProvider"
+  },
+  "order": 5,
+  "category": {
+      "self": "https://https://api.tracker.yandex.net/v2/fields/categories/0000000000000001********",
+      "id": "0000000000000001********",
+      "display": "System"
+  },
+  "type": "standard"
+}

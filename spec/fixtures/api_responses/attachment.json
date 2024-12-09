@@ -1,0 +1,18 @@
+{
+  "self": "https://api.tracker.yandex.net/v2/issues/TREK-1/attachments/123",
+  "id": "123",
+  "name": "test.png",
+  "content": "https://api.tracker.yandex.net/v2/issues/TREK-1/attachments/123/content",
+  "thumbnail": "https://api.tracker.yandex.net/v2/issues/TREK-1/attachments/123/thumbnail",
+  "createdBy": {
+    "self": "https://api.tracker.yandex.net/v2/users/123",
+    "id": "123",
+    "display": "Ivan Ivanov"
+  },
+  "createdAt": "2020-11-03T13:24:52.575+0000",
+  "mimetype": "image/png",
+  "size": 1,
+  "metadata": {
+    "size": "100x100"
+  }
+}

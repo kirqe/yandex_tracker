@@ -1,0 +1,20 @@
+{
+  "self": "https://https://api.tracker.yandex.net/v2/users/12********",
+  "uid": 1,
+  "login": "user_login",
+  "trackerUid": 1,
+  "passportUid": 1,
+  "cloudUid": "bfbdrb1aa248********",
+  "firstName": "first_name",
+  "lastName": "last_name",
+  "display": "displayed_name",
+  "email": "email",
+  "external": false,
+  "hasLicense": true,
+  "dismissed": false,
+  "useNewFilters": true,
+  "disableNotifications": false,
+  "firstLoginDate": "2020-10-27T13:06:21.787+0000",
+  "lastLoginDate": "2022-07-25T17:12:33.787+0000",
+  "welcomeMailSent": true
+  }

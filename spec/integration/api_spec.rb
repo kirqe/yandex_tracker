@@ -6,6 +6,7 @@ RSpec.describe "API Integration" do
   include_context "with api stubs"
 
   let(:client) { YandexTracker::Client.new }
+
   let(:urls) do
     {
       queue: "https://api.tracker.yandex.net/v2/queues",
@@ -25,7 +26,7 @@ RSpec.describe "API Integration" do
         .to_return(
           status: 200,
           headers: { "Content-Type" => "application/json" },
-          body: { id: "123", key: "TEST", name: "TEST" }.to_json
+          body: load_fixture("queue")
         )
 
       # CREATE ISSUE
@@ -34,7 +35,7 @@ RSpec.describe "API Integration" do
         .to_return(
           status: 200,
           headers: { "Content-Type" => "application/json" },
-          body: { id: "123", key: "TEST-1" }.to_json
+          body: load_fixture("issue")
         )
 
       # CREATE COMMENT
@@ -43,7 +44,7 @@ RSpec.describe "API Integration" do
         .to_return(
           status: 200,
           headers: { "Content-Type" => "application/json" },
-          body: { id: "456", text: "Test Comment" }.to_json
+          body: load_fixture("comment")
         )
 
       # CREATE ATTACHMENT
@@ -52,7 +53,7 @@ RSpec.describe "API Integration" do
         .to_return(
           status: 200,
           headers: { "Content-Type" => "application/json" },
-          body: { id: "789", name: "test.png" }.to_json
+          body: load_fixture("attachment")
         )
 
       # LIST QUEUE ISSUES
@@ -61,7 +62,7 @@ RSpec.describe "API Integration" do
         .to_return(
           status: 200,
           headers: { "Content-Type" => "application/json" },
-          body: [{ id: "TEST-1", summary: "Issue 1" }].to_json
+          body: [load_fixture("issue")].to_json
         )
 
       # LIST ISSUE COMMENTS
@@ -69,7 +70,7 @@ RSpec.describe "API Integration" do
         .to_return(
           status: 200,
           headers: { "Content-Type" => "application/json" },
-          body: [{ id: "456", text: "Test Comment" }].to_json
+          body: [load_fixture("comment")].to_json
         )
 
       # CREATE TRANSITION
