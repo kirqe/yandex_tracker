@@ -55,28 +55,23 @@ module YandexTracker
         end
       end
 
-      # rubocop:disable Metrics/CyclomaticComplexity
       def wrap_hash(hash)
         return hash unless hash["self"]
 
-        # Get the resource type from the last segment of the URL
         resource_type = hash["self"].split("/").last(2).first
+        object_class = classify(resource_type)
 
-        case resource_type
-        when "users"     then Objects::User.new(client, hash)
-        when "comments"  then Objects::Comment.new(client, hash, context)
-        when "issues"    then Objects::Issue.new(client, hash)
-        when "queues"    then Objects::Queue.new(client, hash)
-        when "fields"    then Objects::Field.new(client, hash)
-        when "workflows" then Objects::Workflow.new(client, hash)
-        when "categories" then Objects::Category.new(client, hash)
-        when "resolutions" then Objects::Resolution.new(client, hash)
-        when "attachments" then Objects::Attachment.new(client, hash)
-        when "localFields" then Objects::LocalField.new(client, hash)
-        else hash
-        end
+        return hash unless object_class
+
+        object_class.new(client, hash, context)
       end
-      # rubocop:enable Metrics/CyclomaticComplexity
+
+      def classify(type)
+        class_name = type.split(/(?=[A-Z])/).map(&:capitalize).join.chomp("s")
+        Objects.const_get(class_name)
+      rescue NameError
+        nil
+      end
 
       def build_objects(klass, data)
         data.map { |item| klass.new(client, item, context) }

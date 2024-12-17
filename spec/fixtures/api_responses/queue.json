@@ -1,26 +1,35 @@
 {
-  "self": "https://https://api.tracker.yandex.net/v2/queues/DESIGN",
-  "id": "111",
-  "key": "DESIGN",
-  "version": 1400150916068,
-  "name": "Design",
+  "self": "https://api.tracker.yandex.net/v2/queues/TEST",
+  "id": "123456789",
+  "key": "TEST",
+  "version": 2,
+  "name": "test",
   "lead": {
-     "self": "https://https://api.tracker.yandex.net/v2/users/44********",
-     "id": "artemredkin",
-     "display": "Artem Redkin"
+    "self": "https://api.tracker.yandex.net/v2/users/123456789",
+    "id": "123456789",
+    "display": "Ivan Ivanov",
+    "cloudUid": "123456789",
+    "passportUid": 12345678
   },
   "assignAuto": false,
-  "allowExternals" : false,
   "defaultType": {
-    "self": "https://https://api.tracker.yandex.net/v2/issuetypes/2",
+    "self": "https://api.tracker.yandex.net/v2/issuetypes/2",
     "id": "2",
     "key": "task",
-    "display": "Task"
+    "display": "Задача"
   },
   "defaultPriority": {
-    "self": "https://https://api.tracker.yandex.net/v2/priorities/2",
-    "id": "2",
+    "self": "https://api.tracker.yandex.net/v2/priorities/3",
+    "id": "3",
     "key": "normal",
-    "display": "Normal"
-  }
+    "display": "Средний"
+  },
+  "denyVoting": false,
+  "denyConductorAutolink": false,
+  "denyTrackerAutolink": false,
+  "useComponentPermissionsIntersection": false,
+  "addSummoneeToIssueAccess": true,
+  "addCommentAuthorToIssueFollowers": true,
+  "workflowActionsStyle": "hidden",
+  "useLastSignature": false
 }

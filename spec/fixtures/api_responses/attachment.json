@@ -1,12 +1,12 @@
 {
-  "self": "https://api.tracker.yandex.net/v2/issues/TREK-1/attachments/123",
-  "id": "123",
+  "self": "https://api.tracker.yandex.net/v2/issues/TREK-1/attachments/123456789",
+  "id": "123456789",
   "name": "test.png",
-  "content": "https://api.tracker.yandex.net/v2/issues/TREK-1/attachments/123/content",
-  "thumbnail": "https://api.tracker.yandex.net/v2/issues/TREK-1/attachments/123/thumbnail",
+  "content": "https://api.tracker.yandex.net/v2/issues/TREK-1/attachments/123456789/content",
+  "thumbnail": "https://api.tracker.yandex.net/v2/issues/TREK-1/attachments/123456789/thumbnail",
   "createdBy": {
-    "self": "https://api.tracker.yandex.net/v2/users/123",
-    "id": "123",
+    "self": "https://api.tracker.yandex.net/v2/users/123456789",
+    "id": "123456789",
     "display": "Ivan Ivanov"
   },
   "createdAt": "2020-11-03T13:24:52.575+0000",

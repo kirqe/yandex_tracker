@@ -1,0 +1,1818 @@
+[
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/queue",
+    "id": "queue",
+    "name": "Очередь",
+    "key": "queue",
+    "version": 0,
+    "schema": {
+      "type": "queue",
+      "required": true
+    },
+    "readonly": true,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "QueueSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "QueueOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "QueueQueryProvider"
+    },
+    "order": 1,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/theTestField",
+    "id": "theTestField",
+    "name": "тестовое поле",
+    "key": "theTestField",
+    "version": 1,
+    "schema": {
+      "type": "string",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "StringOptionalQueryProvider"
+    },
+    "order": 1,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/67334d6b1114e54e41ec464a",
+      "id": "67334d6b1114e54e41ec464a",
+      "display": "тестовая-категория"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/myglobalfield1",
+    "id": "myglobalfield1",
+    "name": "Моe поле 1",
+    "key": "myglobalfield1",
+    "version": 1,
+    "schema": {
+      "type": "string",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "StringOptionalQueryProvider"
+    },
+    "order": 2,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000005",
+      "id": "000000000000000000000005",
+      "display": "SLA"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/type",
+    "id": "type",
+    "name": "Тип",
+    "key": "type",
+    "version": 0,
+    "schema": {
+      "type": "issuetype",
+      "required": true
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "IssueTypeSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "IssueTypeOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "IssueTypeQueryProvider"
+    },
+    "order": 3,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/priority",
+    "id": "priority",
+    "name": "Приоритет",
+    "key": "priority",
+    "version": 0,
+    "schema": {
+      "type": "priority",
+      "required": true
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "PrioritySuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "PriorityOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "PriorityQueryProvider"
+    },
+    "order": 4,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/key",
+    "id": "key",
+    "name": "Ключ",
+    "key": "key",
+    "version": 0,
+    "schema": {
+      "type": "string",
+      "required": true
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "IssueKeySuggestProvider"
+    },
+    "queryProvider": {
+      "type": "KeyQueryProvider"
+    },
+    "order": 5,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/aliases",
+    "id": "aliases",
+    "name": "Синонимы",
+    "key": "aliases",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "string"
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "StringOptionalQueryProvider"
+    },
+    "order": 6,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/summary",
+    "id": "summary",
+    "name": "Задача",
+    "key": "summary",
+    "version": 0,
+    "schema": {
+      "type": "string",
+      "required": true
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "SummaryQueryProvider"
+    },
+    "order": 7,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/description",
+    "id": "description",
+    "name": "Описание",
+    "key": "description",
+    "version": 0,
+    "schema": {
+      "type": "text",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "TextAnalyzedQueryProvider"
+    },
+    "order": 8,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/descriptionHtml",
+    "id": "descriptionHtml",
+    "name": "Описание",
+    "key": "descriptionHtml",
+    "version": 0,
+    "schema": {
+      "type": "string",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "order": 9,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/status",
+    "id": "status",
+    "name": "Статус",
+    "key": "status",
+    "version": 0,
+    "schema": {
+      "type": "status",
+      "required": true
+    },
+    "readonly": true,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "StatusSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "StatusOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "StatusQueryProvider"
+    },
+    "order": 10,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/resolution",
+    "id": "resolution",
+    "name": "Резолюция",
+    "key": "resolution",
+    "version": 0,
+    "schema": {
+      "type": "resolution",
+      "required": false
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "ResolutionSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "ResolutionOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "ResolutionQueryProvider"
+    },
+    "order": 11,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/statusStartTime",
+    "id": "statusStartTime",
+    "name": "Статус изменен",
+    "key": "statusStartTime",
+    "version": 0,
+    "schema": {
+      "type": "datetime",
+      "required": false
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "DateTimeOptionalQueryProvider"
+    },
+    "order": 12,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/createdAt",
+    "id": "createdAt",
+    "name": "Создано",
+    "key": "createdAt",
+    "version": 0,
+    "schema": {
+      "type": "datetime",
+      "required": true
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "DateTimeQueryProvider"
+    },
+    "order": 13,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/updatedAt",
+    "id": "updatedAt",
+    "name": "Обновлено",
+    "key": "updatedAt",
+    "version": 0,
+    "schema": {
+      "type": "datetime",
+      "required": true
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "DateTimeQueryProvider"
+    },
+    "order": 14,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/resolvedAt",
+    "id": "resolvedAt",
+    "name": "Разрешен",
+    "key": "resolvedAt",
+    "version": 0,
+    "schema": {
+      "type": "datetime",
+      "required": false
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "DateTimeOptionalQueryProvider"
+    },
+    "order": 15,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/lastCommentUpdatedAt",
+    "id": "lastCommentUpdatedAt",
+    "name": "Последний комментарий",
+    "key": "lastCommentUpdatedAt",
+    "version": 0,
+    "schema": {
+      "type": "datetime",
+      "required": false
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "DateTimeOptionalQueryProvider"
+    },
+    "order": 16,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/start",
+    "id": "start",
+    "name": "Дата начала",
+    "key": "start",
+    "version": 0,
+    "schema": {
+      "type": "date",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "DateOptionalQueryProvider"
+    },
+    "order": 17,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/end",
+    "id": "end",
+    "name": "Дата завершения",
+    "key": "end",
+    "version": 0,
+    "schema": {
+      "type": "date",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "DateOptionalQueryProvider"
+    },
+    "order": 18,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/deadline",
+    "id": "deadline",
+    "name": "Дедлайн",
+    "key": "deadline",
+    "version": 0,
+    "schema": {
+      "type": "date",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "DateOptionalQueryProvider"
+    },
+    "order": 19,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/createdBy",
+    "id": "createdBy",
+    "name": "Автор",
+    "key": "createdBy",
+    "version": 0,
+    "schema": {
+      "type": "user",
+      "required": true
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "UserSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "TeamOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "UserQueryProvider"
+    },
+    "order": 21,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/assignee",
+    "id": "assignee",
+    "name": "Исполнитель",
+    "key": "assignee",
+    "version": 0,
+    "schema": {
+      "type": "user",
+      "required": false
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "UserSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "TeamOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "UserOptionalQueryProvider"
+    },
+    "order": 22,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/followers",
+    "id": "followers",
+    "name": "Наблюдатели",
+    "key": "followers",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "user"
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "UserSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "TeamOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "UserOptionalQueryProvider"
+    },
+    "order": 23,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/access",
+    "id": "access",
+    "name": "Доступ",
+    "key": "access",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "user"
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "UserSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "TeamOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "UserOptionalQueryProvider"
+    },
+    "order": 24,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/updatedBy",
+    "id": "updatedBy",
+    "name": "Изменил",
+    "key": "updatedBy",
+    "version": 0,
+    "schema": {
+      "type": "user",
+      "required": true
+    },
+    "readonly": true,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "UserSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "TeamOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "UserQueryProvider"
+    },
+    "order": 25,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/resolvedBy",
+    "id": "resolvedBy",
+    "name": "Решивший",
+    "key": "resolvedBy",
+    "version": 0,
+    "schema": {
+      "type": "user",
+      "required": false
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "UserSuggestProvider"
+    },
+    "queryProvider": {
+      "type": "UserOptionalQueryProvider"
+    },
+    "order": 26,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/followingMaillists",
+    "id": "followingMaillists",
+    "name": "Рассылки",
+    "key": "followingMaillists",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "maillist"
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "MailListSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "MailListOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "MaillistOptionalQueryProvider"
+    },
+    "order": 27,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/project",
+    "id": "project",
+    "name": "Проект",
+    "key": "project",
+    "version": 0,
+    "schema": {
+      "type": "project",
+      "required": false
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "ProjectSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "ProjectOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "ProjectOptionalQueryProvider"
+    },
+    "order": 28,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/tags",
+    "id": "tags",
+    "name": "Теги",
+    "key": "tags",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "string"
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "TagSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "TagOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "TagOptionalQueryProvider"
+    },
+    "order": 29,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/components",
+    "id": "components",
+    "name": "Компоненты",
+    "key": "components",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "component"
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "ComponentSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "ComponentOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "ComponentOptionalQueryProvider"
+    },
+    "order": 30,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/affectedVersions",
+    "id": "affectedVersions",
+    "name": "Найдено в версиях",
+    "key": "affectedVersions",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "version"
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "VersionSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "VersionOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "VersionOptionalQueryProvider"
+    },
+    "order": 31,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/fixVersions",
+    "id": "fixVersions",
+    "name": "Исправить в версиях",
+    "key": "fixVersions",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "version"
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "VersionSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "VersionOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "VersionOptionalQueryProvider"
+    },
+    "order": 32,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/unique",
+    "id": "unique",
+    "name": "UUID",
+    "key": "unique",
+    "version": 0,
+    "schema": {
+      "type": "string",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "StringOptionalQueryProvider"
+    },
+    "order": 34,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/followingGroups",
+    "id": "followingGroups",
+    "name": "Наблюдатели (группы)",
+    "key": "followingGroups",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "group"
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "GroupSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "GroupOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "GroupOptionalQueryProvider"
+    },
+    "order": 35,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/parent",
+    "id": "parent",
+    "name": "Родительский тикет",
+    "key": "parent",
+    "version": 0,
+    "schema": {
+      "type": "issue",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "IssueSuggestProvider"
+    },
+    "queryProvider": {
+      "type": "IssueOptionalQueryProvider"
+    },
+    "order": 36,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/epic",
+    "id": "epic",
+    "name": "Epic",
+    "key": "epic",
+    "version": 0,
+    "schema": {
+      "type": "issue",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "IssueOptionalQueryProvider"
+    },
+    "order": 37,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000003",
+      "id": "000000000000000000000003",
+      "display": "Agile"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/originalEstimation",
+    "id": "originalEstimation",
+    "name": "Первоначальная оценка",
+    "key": "originalEstimation",
+    "version": 0,
+    "schema": {
+      "type": "timetracking",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "TimeTrackingOptionalQueryProvider"
+    },
+    "order": 38,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000002",
+      "id": "000000000000000000000002",
+      "display": "Учёт Времени"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/estimation",
+    "id": "estimation",
+    "name": "Оценка",
+    "key": "estimation",
+    "version": 0,
+    "schema": {
+      "type": "timetracking",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "TimeTrackingOptionalQueryProvider"
+    },
+    "order": 39,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000002",
+      "id": "000000000000000000000002",
+      "display": "Учёт Времени"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/spent",
+    "id": "spent",
+    "name": "Затрачено времени",
+    "key": "spent",
+    "version": 0,
+    "schema": {
+      "type": "timetracking",
+      "required": false
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "TimeTrackingOptionalQueryProvider"
+    },
+    "order": 40,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000002",
+      "id": "000000000000000000000002",
+      "display": "Учёт Времени"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/storyPoints",
+    "id": "storyPoints",
+    "name": "Story Points",
+    "key": "storyPoints",
+    "version": 0,
+    "schema": {
+      "type": "float",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "NumberOptionalQueryProvider"
+    },
+    "order": 41,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000003",
+      "id": "000000000000000000000003",
+      "display": "Agile"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/sprint",
+    "id": "sprint",
+    "name": "Спринт",
+    "key": "sprint",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "sprint"
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "SprintSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "SprintOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "SprintOptionalQueryProvider"
+    },
+    "order": 42,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000003",
+      "id": "000000000000000000000003",
+      "display": "Agile"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/previousStatusLastAssignee",
+    "id": "previousStatusLastAssignee",
+    "name": "Исполнитель в предыдущем статусе",
+    "key": "previousStatusLastAssignee",
+    "version": 0,
+    "schema": {
+      "type": "user",
+      "required": false
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "UserOptionalQueryProvider"
+    },
+    "order": 43,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/previousStatus",
+    "id": "previousStatus",
+    "name": "Предыдущий статус",
+    "key": "previousStatus",
+    "version": 0,
+    "schema": {
+      "type": "status",
+      "required": false
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "StatusOptionalQueryProvider"
+    },
+    "order": 44,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/previousQueue",
+    "id": "previousQueue",
+    "name": "Старая очередь",
+    "key": "previousQueue",
+    "version": 0,
+    "schema": {
+      "type": "queue",
+      "required": false
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "QueueSuggestProvider"
+    },
+    "queryProvider": {
+      "type": "QueueOptionalQueryProvider"
+    },
+    "order": 45,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/votedBy",
+    "id": "votedBy",
+    "name": "Проголосовали",
+    "key": "votedBy",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "user"
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "UserSuggestProvider"
+    },
+    "queryProvider": {
+      "type": "UserOptionalQueryProvider"
+    },
+    "order": 46,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/votes",
+    "id": "votes",
+    "name": "Проголосовало",
+    "key": "votes",
+    "version": 0,
+    "schema": {
+      "type": "integer",
+      "required": true
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "QueryProviderProto$NumberQueryProviderProto"
+    },
+    "order": 47,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/favoritedBy",
+    "id": "favoritedBy",
+    "name": "Favorited By",
+    "key": "favoritedBy",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "user"
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "order": 48,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/emailFrom",
+    "id": "emailFrom",
+    "name": "От",
+    "key": "emailFrom",
+    "version": 0,
+    "schema": {
+      "type": "string",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "StringOptionalQueryProvider"
+    },
+    "order": 49,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000004",
+      "id": "000000000000000000000004",
+      "display": "Email"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/emailTo",
+    "id": "emailTo",
+    "name": "Кому",
+    "key": "emailTo",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "string"
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "StringOptionalQueryProvider"
+    },
+    "order": 50,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000004",
+      "id": "000000000000000000000004",
+      "display": "Email"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/emailCc",
+    "id": "emailCc",
+    "name": "Копия",
+    "key": "emailCc",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "string"
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "StringOptionalQueryProvider"
+    },
+    "order": 51,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000004",
+      "id": "000000000000000000000004",
+      "display": "Email"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/emailCreatedBy",
+    "id": "emailCreatedBy",
+    "name": "Создано по письму на адрес",
+    "key": "emailCreatedBy",
+    "version": 0,
+    "schema": {
+      "type": "string",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "StringOptionalQueryProvider"
+    },
+    "order": 52,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000004",
+      "id": "000000000000000000000004",
+      "display": "Email"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/commentWithoutExternalMessageCount",
+    "id": "commentWithoutExternalMessageCount",
+    "name": "Комментариев без сообщения",
+    "key": "commentWithoutExternalMessageCount",
+    "version": 0,
+    "schema": {
+      "type": "integer",
+      "required": true
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "QueryProviderProto$NumberQueryProviderProto"
+    },
+    "order": 53,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/commentWithExternalMessageCount",
+    "id": "commentWithExternalMessageCount",
+    "name": "Комментариев с сообщением",
+    "key": "commentWithExternalMessageCount",
+    "version": 0,
+    "schema": {
+      "type": "integer",
+      "required": true
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "QueryProviderProto$NumberQueryProviderProto"
+    },
+    "order": 54,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/sla",
+    "id": "sla",
+    "name": "SLA",
+    "key": "sla",
+    "version": 0,
+    "schema": {
+      "type": "sla",
+      "required": false
+    },
+    "readonly": true,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "SlaSettingsSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "OptionsProviderProto$SlaSettingsOptionsProviderProto"
+    },
+    "order": 55,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000005",
+      "id": "000000000000000000000005",
+      "display": "SLA"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/boards",
+    "id": "boards",
+    "name": "Доски",
+    "key": "boards",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "board"
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "BoardSuggestProvider"
+    },
+    "optionsProvider": {
+      "type": "BoardOptionsProvider"
+    },
+    "queryProvider": {
+      "type": "BoardOptionalQueryProvider"
+    },
+    "order": 56,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/pendingReplyFrom",
+    "id": "pendingReplyFrom",
+    "name": "Нужен ответ пользователя",
+    "key": "pendingReplyFrom",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "user"
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "UserSuggestProvider"
+    },
+    "queryProvider": {
+      "type": "UserOptionalQueryProvider"
+    },
+    "order": 57,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/checklistItems",
+    "id": "checklistItems",
+    "name": "Чеклист",
+    "key": "checklistItems",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "checklistItem"
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "order": 58,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/checklistDone",
+    "id": "checklistDone",
+    "name": "Выполненные пункты чеклиста",
+    "key": "checklistDone",
+    "version": 0,
+    "schema": {
+      "type": "integer",
+      "required": false
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "QueryProviderProto$NumberQueryProviderProto"
+    },
+    "order": 59,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/checklistTotal",
+    "id": "checklistTotal",
+    "name": "Всего пунктов в чеклисте",
+    "key": "checklistTotal",
+    "version": 0,
+    "schema": {
+      "type": "integer",
+      "required": false
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "QueryProviderProto$NumberQueryProviderProto"
+    },
+    "order": 60,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/lastQueue",
+    "id": "lastQueue",
+    "name": "Предыдущая очередь",
+    "key": "lastQueue",
+    "version": 0,
+    "schema": {
+      "type": "queue",
+      "required": false
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "QueueSuggestProvider"
+    },
+    "queryProvider": {
+      "type": "QueueOptionalQueryProvider"
+    },
+    "order": 61,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/participantPercents",
+    "id": "participantPercents",
+    "name": "Процент участия",
+    "key": "participantPercents",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "userToDouble"
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": true,
+    "style": "PERCENTS",
+    "suggestProvider": {
+      "type": "UserSuggestProvider"
+    },
+    "queryProvider": {
+      "type": "UserOptionalQueryProvider"
+    },
+    "order": 62,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/participantPercentsTotal",
+    "id": "participantPercentsTotal",
+    "name": "Суммарный процент участия",
+    "key": "participantPercentsTotal",
+    "version": 0,
+    "schema": {
+      "type": "float",
+      "required": false
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "style": "PERCENTS",
+    "queryProvider": {
+      "type": "NumberOptionalQueryProvider"
+    },
+    "order": 63,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/parentIssueLinkChain",
+    "id": "parentIssueLinkChain",
+    "name": "Цепочка родительских тикетов",
+    "key": "parentIssueLinkChain",
+    "version": 0,
+    "schema": {
+      "type": "issueLinkChain",
+      "required": false
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "queryProvider": {
+      "type": "IssueOptionalQueryProvider"
+    },
+    "order": 64,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/possibleSpam",
+    "id": "possibleSpam",
+    "name": "Возможно спам",
+    "key": "possibleSpam",
+    "version": 0,
+    "schema": {
+      "type": "integer",
+      "required": false
+    },
+    "readonly": false,
+    "options": true,
+    "suggest": false,
+    "optionsProvider": {
+      "type": "FixedListOptionsProvider",
+      "needValidation": true,
+      "values": [
+        0,
+        1
+      ]
+    },
+    "queryProvider": {
+      "type": "NumberOptionalQueryProvider"
+    },
+    "order": 65,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/paletteColor",
+    "id": "paletteColor",
+    "name": "Цвет",
+    "key": "paletteColor",
+    "version": 0,
+    "schema": {
+      "type": "paletteColor",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "order": 66,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/statusType",
+    "id": "statusType",
+    "name": "Тип статуса",
+    "key": "statusType",
+    "version": 0,
+    "schema": {
+      "type": "string",
+      "required": false
+    },
+    "readonly": true,
+    "options": true,
+    "suggest": false,
+    "optionsProvider": {
+      "type": "OptionsProviderProto$StatusTypeOptionsProviderProto"
+    },
+    "queryProvider": {
+      "type": "QueryProviderProto$StatusTypeOptionalQueryProviderProto"
+    },
+    "order": 67,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/numberOfSubIssues",
+    "id": "numberOfSubIssues",
+    "name": "Undefined message",
+    "key": "numberOfSubIssues",
+    "version": 0,
+    "schema": {
+      "type": "integer",
+      "required": false
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "order": 68,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/linksCount",
+    "id": "linksCount",
+    "name": "Undefined message",
+    "key": "linksCount",
+    "version": 0,
+    "schema": {
+      "type": "integer",
+      "required": true
+    },
+    "readonly": true,
+    "options": false,
+    "suggest": false,
+    "order": 69,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/metricItems",
+    "id": "metricItems",
+    "name": "Метрики",
+    "key": "metricItems",
+    "version": 0,
+    "schema": {
+      "type": "array",
+      "items": "metricItem"
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": false,
+    "order": 70,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/fields/qaEngineer",
+    "id": "qaEngineer",
+    "name": "QA-инженер",
+    "key": "qaEngineer",
+    "version": 1,
+    "schema": {
+      "type": "user",
+      "required": false
+    },
+    "readonly": false,
+    "options": false,
+    "suggest": true,
+    "suggestProvider": {
+      "type": "UserSuggestProvider"
+    },
+    "queryProvider": {
+      "type": "UserOptionalQueryProvider"
+    },
+    "order": 128,
+    "category": {
+      "self": "https://api.tracker.yandex.net/v2/fields/categories/000000000000000000000001",
+      "id": "000000000000000000000001",
+      "display": "Системные"
+    },
+    "type": "standard"
+  }
+]

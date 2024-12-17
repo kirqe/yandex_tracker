@@ -1,0 +1,100 @@
+[
+  {
+    "self": "https://api.tracker.yandex.net/v2/issues/123456789/attachments/3",
+    "id": "3",
+    "name": "3995270.png",
+    "content": "https://api.tracker.yandex.net/v2/issues/123456789/attachments/3/3995270.png",
+    "createdBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "createdAt": "2024-11-17T19:18:36.433+0000",
+    "mimetype": "test filename",
+    "size": 99975
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/issues/123456789/attachments/4",
+    "id": "4",
+    "name": "Test filename",
+    "content": "https://api.tracker.yandex.net/v2/issues/123456789/attachments/4/Test%20filename",
+    "thumbnail": "https://api.tracker.yandex.net/v2/issues/123456789/thumbnails/4",
+    "createdBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "createdAt": "2024-11-17T19:20:05.298+0000",
+    "mimetype": "image/png",
+    "size": 99975,
+    "metadata": {
+      "size": "348x348"
+    }
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/issues/123456789/attachments/5",
+    "id": "5",
+    "name": "image.png",
+    "content": "https://api.tracker.yandex.net/v2/issues/123456789/attachments/5/image.png",
+    "thumbnail": "https://api.tracker.yandex.net/v2/issues/123456789/thumbnails/5",
+    "createdBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "createdAt": "2024-11-17T19:26:18.904+0000",
+    "mimetype": "image/png",
+    "size": 9044,
+    "metadata": {
+      "size": "460x460"
+    },
+    "commentId": "673a4360fc57433145f7ce83"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/issues/123456789/attachments/6",
+    "id": "6",
+    "name": "Test wj",
+    "content": "https://api.tracker.yandex.net/v2/issues/123456789/attachments/6/Test%20wj",
+    "thumbnail": "https://api.tracker.yandex.net/v2/issues/123456789/thumbnails/6",
+    "createdBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "createdAt": "2024-11-17T19:36:38.075+0000",
+    "mimetype": "image/jpeg",
+    "size": 11559,
+    "metadata": {
+      "size": "400x400"
+    },
+    "commentId": "673a45d4fc57433145f7ce8c"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/issues/123456789/attachments/9",
+    "id": "9",
+    "name": "jewish-nose-on-the-jews-and-their-lies-stereotypes-of-jews-who-is-a-jew-kike-jewish-history-gentile-goy-jew-antisemitism-thumbnail.png",
+    "content": "https://api.tracker.yandex.net/v2/issues/123456789/attachments/9/jewish-nose-on-the-jews-and-their-lies-stereotypes-of-jews-who-is-a-jew-kike-jewish-history-gentile-goy-jew-antisemitism-thumbnail.png",
+    "thumbnail": "https://api.tracker.yandex.net/v2/issues/123456789/thumbnails/9",
+    "createdBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "createdAt": "2024-11-26T08:24:26.525+0000",
+    "mimetype": "image/png",
+    "size": 15324,
+    "metadata": {
+      "size": "346x346"
+    }
+  }
+]

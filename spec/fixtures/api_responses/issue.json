@@ -1,90 +1,73 @@
-
-  {
-  "self": "https://https://api.tracker.yandex.net/v2/issues/TREK-9844",
-  "id": "593cd211ef7e8a33********",
-  "key": "TREK-9844",
-  "version": 7,
-  "lastCommentUpdatedAt": "2017-07-18T13:33:44.291+0000",
-  "summary": "subtask",
-  "parent": {
-      "self": "https://https://api.tracker.yandex.net/v2/issues/JUNE-2",
-      "id": "593cd0acef7e8a33********",
-      "key": "JUNE-2",
-      "display": "Task"
-      },
-  "aliases": [
-          "JUNE-3"
-      ],
-
+{
+  "self": "https://api.tracker.yandex.net/v2/issues/TEST-1",
+  "id": "123456789",
+  "key": "TEST-1",
+  "version": 30,
+  "lastCommentUpdatedAt": "2024-11-19T19:20:44.423+0000",
+  "summary": "test",
+  "statusStartTime": "2024-11-08T08:48:17.246+0000",
   "updatedBy": {
-      "self": "https://https://api.tracker.yandex.net/v2/users/11********",
-      "id": "11********",
-      "display": "Ivan Ivanov"
-      },
-  "description": "<#<html><head></head><body><div>test</div><div>&nbsp;</div><div>&nbsp;</div> </body></html>#>",
-  "sprint": [
-          {
-      "self": "https://https://api.tracker.yandex.net/v2/sprints/53**",
-      "id": "53**",
-      "display": "sprint1"
-          }
-      ],
-  "type": {
-      "self": "https://https://api.tracker.yandex.net/v2/issuetypes/2",
-      "id": "2",
-      "key": "task",
-      "display": "Issue"
-      },
-  "priority": {
-      "self": "https://https://api.tracker.yandex.net/v2/priorities/2",
-      "id": "2",
-      "key": "normal",
-      "display": "Normal"
-      },
-
-  "createdAt": "2017-06-11T05:16:01.339+0000",
-  "followers": [
-      {
-      "self": "https://https://api.tracker.yandex.net/v2/users/11********",
-      "id": "11********",
-      "display": "Ivan Ivanov"
-      }
-      ],
-  "createdBy": {
-      "self": "https://https://api.tracker.yandex.net/v2/users/11********",
-      "id": "11********",
-      "display": "Ivan Ivanov"
-      },
-  "votes": 0,
-  "assignee": {
-      "self": "https://https://api.tracker.yandex.net/v2/users/11********",
-      "id": "11********",
-      "display": "Ivan Ivanov"
-      },
-  "project": {
-      "display": "Startrek project",
-      "id": "1",
-      "self": "https://https://api.tracker.yandex.net/v2/projects/1"
+    "self": "https://api.tracker.yandex.net/v2/users/123456789",
+    "id": "123456789",
+    "display": "Ivan Ivanov",
+    "cloudUid": "123456789",
+    "passportUid": 12345678
   },
+  "statusType": {
+    "id": "new",
+    "display": "Начальный",
+    "key": "new"
+  },
+  "boards": [
+    {
+      "id": 1,
+      "name": "test"
+    }
+  ],
+  "type": {
+    "self": "https://api.tracker.yandex.net/v2/issuetypes/2",
+    "id": "2",
+    "key": "task",
+    "display": "Задача"
+  },
+  "priority": {
+    "self": "https://api.tracker.yandex.net/v2/priorities/3",
+    "id": "3",
+    "key": "normal",
+    "display": "Средний"
+  },
+  "createdAt": "2024-11-08T08:48:17.203+0000",
+  "followers": [
+    {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    }
+  ],
+  "createdBy": {
+    "self": "https://api.tracker.yandex.net/v2/users/123456789",
+    "id": "123456789",
+    "display": "Ivan Ivanov",
+    "cloudUid": "123456789",
+    "passportUid": 12345678
+  },
+  "commentWithoutExternalMessageCount": 9,
+  "votes": 0,
+  "commentWithExternalMessageCount": 0,
   "queue": {
-      "self": "https://https://api.tracker.yandex.net/v2/queues/TREK",
-      "id": "111",
-      "key": "TREK",
-      "display": "Startrek"
-      },
-  "updatedAt": "2017-07-18T13:33:44.291+0000",
+    "self": "https://api.tracker.yandex.net/v2/queues/TEST",
+    "id": "1",
+    "key": "TEST",
+    "display": "test"
+  },
+  "updatedAt": "2024-11-26T08:24:27.351+0000",
   "status": {
-      "self": "https://https://api.tracker.yandex.net/v2/statuses/1",
-      "id": "1",
-      "key": "open",
-      "display": "Open"
-      },
-  "previousStatus": {
-      "self": "https://https://api.tracker.yandex.net/v2/statuses/2",
-      "id": "2",
-      "key": "resolved",
-      "display": "Resolved"
-      },
+    "self": "https://api.tracker.yandex.net/v2/statuses/1",
+    "id": "1",
+    "key": "open",
+    "display": "Открыт"
+  },
   "favorite": false
-  }
-
+}

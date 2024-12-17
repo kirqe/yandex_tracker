@@ -6,11 +6,11 @@ Ruby API client for [YandexTracker](https://yandex.cloud/en-ru/docs/tracker/abou
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add yandex-tracker
+    $ bundle add yandex_tracker
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install yandex-tracker
+    $ gem install yandex_tracker
 
 ## Configure
 
@@ -64,7 +64,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
   unattached_file = client.attachments.create(File.open("Screenshot.png"))
   comment.create(text: "More details", attachmentIds: [temp_attachment.id])
 
-  issue.transitions
+  issue.transitions.list
   issue.transition('wont_fix', comment: 'wae')
   issue.transition('reopen', comment: 'no')
   issue.transition('close', resolution: 'wontFix')

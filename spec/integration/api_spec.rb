@@ -12,9 +12,9 @@ RSpec.describe "API Integration" do
       queue: "https://api.tracker.yandex.net/v2/queues",
       queue_issues: "https://api.tracker.yandex.net/v2/issues",
       issue: "https://api.tracker.yandex.net/v2/issues",
-      issue_comments: "https://api.tracker.yandex.net/v2/issues/123/comments",
-      issue_attachments: "https://api.tracker.yandex.net/v2/issues/123/attachments",
-      issue_close_transition: "https://api.tracker.yandex.net/v2/issues/123/transitions/close/_execute"
+      issue_comments: "https://api.tracker.yandex.net/v2/issues/123456789/comments",
+      issue_attachments: "https://api.tracker.yandex.net/v2/issues/123456789/attachments",
+      issue_close_transition: "https://api.tracker.yandex.net/v2/issues/123456789/transitions/close/_execute"
     }
   end
 
@@ -26,7 +26,7 @@ RSpec.describe "API Integration" do
         .to_return(
           status: 200,
           headers: { "Content-Type" => "application/json" },
-          body: load_fixture("queue")
+          body: load_fixture("queue").to_json
         )
 
       # CREATE ISSUE
@@ -35,7 +35,7 @@ RSpec.describe "API Integration" do
         .to_return(
           status: 200,
           headers: { "Content-Type" => "application/json" },
-          body: load_fixture("issue")
+          body: load_fixture("issue").to_json
         )
 
       # CREATE COMMENT
@@ -44,7 +44,7 @@ RSpec.describe "API Integration" do
         .to_return(
           status: 200,
           headers: { "Content-Type" => "application/json" },
-          body: load_fixture("comment")
+          body: load_fixture("comment").to_json
         )
 
       # CREATE ATTACHMENT
@@ -53,12 +53,12 @@ RSpec.describe "API Integration" do
         .to_return(
           status: 200,
           headers: { "Content-Type" => "application/json" },
-          body: load_fixture("attachment")
+          body: load_fixture("attachment").to_json
         )
 
       # LIST QUEUE ISSUES
       stub_request(:get, urls[:queue_issues])
-        .with(query: { queue: "123" })
+        .with(query: { queue: "123456789" })
         .to_return(
           status: 200,
           headers: { "Content-Type" => "application/json" },
@@ -84,23 +84,23 @@ RSpec.describe "API Integration" do
 
       # Test workflow
       queue = client.queues.create(name: "TEST")
-      expect(queue.id).to eq("123")
+      expect(queue.id).to eq("123456789")
 
       issue = client.issues.create(summary: "Test Issue", queue: queue.key)
-      expect(issue.id).to eq("123")
+      expect(issue.id).to eq("123456789")
 
       comment = issue.comments.create(text: "Test Comment")
-      expect(comment.id).to eq("456")
+      expect(comment.id).to eq("123456789")
 
       attachment = issue.attachments.create(File.open("spec/support/test.png"))
-      expect(attachment.id).to eq("789")
+      expect(attachment.id).to eq("123456789")
 
       # Test listing
       issues = queue.issues.list
-      expect(issues.first.id).to eq("TEST-1")
+      expect(issues.first.id).to eq("123456789")
 
       comments = issue.comments.list
-      expect(comments.first.id).to eq("456")
+      expect(comments.first.id).to eq("123456789")
 
       # Test transition
       transitions = issue.transition("close", resolution: "fixed")

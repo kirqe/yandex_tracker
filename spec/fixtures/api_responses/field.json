@@ -27,8 +27,8 @@
   },
   "order": 5,
   "category": {
-      "self": "https://https://api.tracker.yandex.net/v2/fields/categories/0000000000000001********",
-      "id": "0000000000000001********",
+      "self": "https://https://api.tracker.yandex.net/v2/fields/categories/123456789",
+      "id": "123456789",
       "display": "System"
   },
   "type": "standard"

@@ -1,0 +1,227 @@
+[
+  {
+    "self": "https://api.tracker.yandex.net/v2/issues/TEST-1/comments/4",
+    "id": 4,
+    "longId": "123456789",
+    "text": "thit is a comment",
+    "createdBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "updatedBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "createdAt": "2024-11-17T19:13:02.104+0000",
+    "updatedAt": "2024-11-17T19:13:02.104+0000",
+    "version": 1,
+    "type": "standard",
+    "transport": "internal"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/issues/TEST-1/comments/5",
+    "id": 5,
+    "longId": "673a4220a80e1d4184476ea5",
+    "text": "another comment from api",
+    "createdBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "updatedBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "createdAt": "2024-11-17T19:21:04.940+0000",
+    "updatedAt": "2024-11-17T19:21:04.940+0000",
+    "version": 1,
+    "type": "standard",
+    "transport": "internal"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/issues/TEST-1/comments/6",
+    "id": 6,
+    "longId": "673a425e55cda76e4c2170c4",
+    "text": "another comment from api with attachment",
+    "createdBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "updatedBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "createdAt": "2024-11-17T19:22:06.916+0000",
+    "updatedAt": "2024-11-17T19:22:06.916+0000",
+    "version": 1,
+    "type": "standard",
+    "transport": "internal"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/issues/TEST-1/comments/7",
+    "id": 7,
+    "longId": "673a432aa80e1d4184476eac",
+    "text": "another comment from api with attachment",
+    "createdBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "updatedBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "createdAt": "2024-11-17T19:25:30.807+0000",
+    "updatedAt": "2024-11-17T19:25:30.807+0000",
+    "version": 1,
+    "type": "standard",
+    "transport": "internal"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/issues/TEST-1/comments/9",
+    "id": 9,
+    "longId": "673a438afc57433145f7ce87",
+    "text": "another comment from api with attachment",
+    "createdBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "updatedBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "createdAt": "2024-11-17T19:27:06.954+0000",
+    "updatedAt": "2024-11-17T19:27:06.954+0000",
+    "version": 1,
+    "type": "standard",
+    "transport": "internal"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/issues/TEST-1/comments/10",
+    "id": 10,
+    "longId": "673a43dbfc57433145f7ce89",
+    "text": "another comment from api with 2 files",
+    "createdBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "updatedBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "createdAt": "2024-11-17T19:28:27.527+0000",
+    "updatedAt": "2024-11-17T19:28:27.527+0000",
+    "version": 1,
+    "type": "standard",
+    "transport": "internal"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/issues/TEST-1/comments/11",
+    "id": 11,
+    "longId": "673a440955cda76e4c2170c8",
+    "text": "another comment from api with files",
+    "createdBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "updatedBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "createdAt": "2024-11-17T19:29:13.406+0000",
+    "updatedAt": "2024-11-17T19:29:13.406+0000",
+    "version": 1,
+    "type": "standard",
+    "transport": "internal"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/issues/TEST-1/comments/12",
+    "id": 12,
+    "longId": "673a45d4fc57433145f7ce8c",
+    "text": "another comment from api with files",
+    "createdBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "updatedBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "createdAt": "2024-11-17T19:36:52.524+0000",
+    "updatedAt": "2024-11-17T19:36:52.524+0000",
+    "version": 1,
+    "type": "standard",
+    "transport": "internal"
+  },
+  {
+    "self": "https://api.tracker.yandex.net/v2/issues/TEST-1/comments/21",
+    "id": 21,
+    "longId": "673ce50ceb761421e9b28334",
+    "text": "hello",
+    "createdBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "updatedBy": {
+      "self": "https://api.tracker.yandex.net/v2/users/123456789",
+      "id": "123456789",
+      "display": "Ivan Ivanov",
+      "cloudUid": "123456789",
+      "passportUid": 12345678
+    },
+    "createdAt": "2024-11-19T19:20:44.423+0000",
+    "updatedAt": "2024-11-19T19:20:44.423+0000",
+    "version": 1,
+    "type": "standard",
+    "transport": "internal"
+  }
+]
